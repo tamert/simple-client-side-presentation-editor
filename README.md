@@ -1,5 +1,13 @@
 # simple-client-side-presentation-editor
 
-yarn install
+referance: https://github.com/necrodome/nuvu-frontend-dev-interview
 
-yarn start
+# preview
+![Tool screenshot](preview.gif)
+
+# install
+
+- ** git clone https://github.com/tamert/simple-client-side-presentation-editor
+- ** cd ./simple-client-side-presentation-editor
+- ** yarn install
+- ** yarn start
