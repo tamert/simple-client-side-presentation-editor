@@ -7,7 +7,7 @@ referance: https://github.com/necrodome/nuvu-frontend-dev-interview
 
 # install
 
-- ** git clone https://github.com/tamert/simple-client-side-presentation-editor
-- ** cd ./simple-client-side-presentation-editor
-- ** yarn install
-- ** yarn start
+-  git clone https://github.com/tamert/simple-client-side-presentation-editor
+-  cd ./simple-client-side-presentation-editor
+-  yarn install
+-  yarn start
