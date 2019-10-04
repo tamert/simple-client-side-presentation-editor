@@ -1,15 +1,11 @@
 const path = require('path');
 const merge = require('webpack-merge');
+
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
 const HtmlPlugin = require('html-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const htmlWebpackPlugin = new HtmlWebpackPlugin({
-    template: path.join(__dirname, "src/index.html"),
-    filename: "./index.html"
-});
 
 const common = require('./webpack.common.js');
 const rules = require('./webpack.rules.js');
@@ -42,13 +38,17 @@ module.exports = merge(common, {
             chunkFilename: '[id].css',
             ignoreOrder: false
         }),
-        new CleanWebpackPlugin(),
+
         new OptimizeCSSAssetsPlugin(),
-        htmlWebpackPlugin
+        new HtmlPlugin({
+            filename: 'index.html',
+            template: './src/index.html',
+            inject: true
+        })
     ],
 
     optimization: {
-        minimize: true,
+        minimize: false,
         minimizer: [new TerserPlugin()],
     },
 
